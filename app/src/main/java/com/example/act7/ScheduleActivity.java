@@ -1,5 +1,6 @@
 package com.example.act7;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,11 +45,11 @@ public class ScheduleActivity extends AppCompatActivity {
         fase = getIntent().getStringExtra("fase");
         selectedIndex = getIntent().getIntExtra("selectedIndex", 0);
 
-        binding.displayNameTextView.setText("Nombre:\n\t" +name);
-        binding.displayFaseTextView.setText("Fase:\n\t"+fase);
+        binding.displayNameTextView.setText("Nombre:\n" +name);
+        binding.displayFaseTextView.setText("Fase:\n"+fase);
 
         // Si el index = 1 or 2 es estudiante de programacion, si es 3 or 4 es estudiante de redes
-        // Si el index es 0 (valor default) no se paso o recibido el index
+        // Si el index es 0 (valor default) no se paso o recibio el index correctamente
         if (selectedIndex == 1 || selectedIndex == 2){
 
             //Los arrays estan en res/values/strings.xml
@@ -56,6 +57,7 @@ public class ScheduleActivity extends AppCompatActivity {
             maestrosProgramacion = getResources().getStringArray(R.array.maestrosProgramacion);
 
             for (int i = 0; i < maestrosProgramacion.length; i++){
+                    int tableRow = getResources().getIdentifier("row"+i, "id", getPackageName());
                     //Obtenemos el id en integers del los TextView objetivo y los asignamos a maestroTextView
                     int maestroTextView = getResources().getIdentifier("maestro"+i, "id", getPackageName());
                     //Buscamos los TextView con el id que se guarda en maestroTextView
@@ -66,7 +68,10 @@ public class ScheduleActivity extends AppCompatActivity {
 
                     //Para prevenir que la aplicacion se cierre en caso de que algun id sea null
                 if (maestroTV != null && materiaTV != null){
-
+                    //colorea una linea si y una no
+                    if (i % 2 == 0) {
+                        binding.getRoot().findViewById(tableRow).setBackgroundColor(Color.argb(25, 0, 122, 255));
+                        }
                         maestroTV.setText(maestrosProgramacion[i]);
                         materiaTV.setText(materiasProgramacion[i]);
                     }
@@ -79,6 +84,7 @@ public class ScheduleActivity extends AppCompatActivity {
             materiasRedes = getResources().getStringArray(R.array.materiasRedes);
 
             for (int i = 0; i < maestrosRedes.length; i++){
+                int tableRow = getResources().getIdentifier("row"+i, "id", getPackageName());
 
                 int maestroTextView = getResources().getIdentifier("maestro"+i, "id", getPackageName());
                 TextView maestroTV = binding.getRoot().findViewById(maestroTextView);
@@ -87,6 +93,9 @@ public class ScheduleActivity extends AppCompatActivity {
                 TextView materiaTV = binding.getRoot().findViewById(materiaTextView);
 
                 if (maestroTV != null && materiaTV != null){
+                    if (i % 2 == 0) {
+                        binding.getRoot().findViewById(tableRow).setBackgroundColor(Color.argb(25, 0, 122, 255));
+                    }
                     maestroTV.setText(maestrosRedes[i]);
                     materiaTV.setText(materiasRedes[i]);
                 }

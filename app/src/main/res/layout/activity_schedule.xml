@@ -6,44 +6,39 @@
     android:layout_height="match_parent"
     android:id="@+id/schedule">
 
+
     <TextView
         android:id="@+id/displayNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="168dp"
-        android:layout_marginBottom="656dp"
+        android:layout_width="161dp"
+        android:layout_height="59dp"
         android:text="TextView"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.615"
+        app:layout_constraintVertical_bias="0.08"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/displayFaseTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="169dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="166dp"
+        android:layout_width="161dp"
+        android:layout_height="59dp"
+
         android:text="TextView"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/displayNameTextView"
-        app:layout_constraintVertical_bias="0.052"
+        app:layout_constraintVertical_bias="0.111"
         tools:ignore="HardcodedText" />
 
-
-
-        <TableLayout
+    <TableLayout
             android:id="@+id/table"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,7 +90,8 @@
             </TableRow>
 
             <!--Row 1-->
-            <TableRow>
+            <TableRow
+                android:id="@+id/row0">
 
                 <TextView
                     android:layout_column="0"
@@ -123,7 +119,8 @@
             </TableRow>
 
             <!--Row 2-->
-            <TableRow>
+            <TableRow
+                android:id="@+id/row1">
 
                 <TextView
                     android:layout_column="0"
@@ -151,7 +148,8 @@
             </TableRow>
 
             <!--Row 3-->
-            <TableRow>
+            <TableRow
+                android:id="@+id/row2">
 
                 <TextView
                     android:layout_column="0"
@@ -179,7 +177,8 @@
             </TableRow>
 
             <!--Row 4-->
-            <TableRow>
+            <TableRow
+                android:id="@+id/row03">
 
                 <TextView
                     android:layout_column="0"
@@ -207,7 +206,8 @@
             </TableRow>
 
             <!--Row 5-->
-            <TableRow>
+            <TableRow
+                android:id="@+id/row4">
 
                 <TextView
                     android:layout_column="0"
@@ -235,7 +235,8 @@
             </TableRow>
 
             <!--Row 6-->
-            <TableRow>
+            <TableRow
+                android:id="@+id/row5">
 
                 <TextView
                     android:layout_column="0"

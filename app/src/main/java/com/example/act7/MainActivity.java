@@ -53,10 +53,11 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Test","Your selection "+currentSelection);
 
 
+                    //Si la eleccion del spinner es la primera (index 0) desactiva el boton
                 if (currentSelection == 0){
 
                     binding.faseTextView.setText("");
-                    binding.seeScheduleButton.setAlpha(.7f);
+                    binding.seeScheduleButton.setAlpha(.5f);
                     binding.seeScheduleButton.setEnabled(false);
                 }
                else if (currentSelection == 3 || currentSelection == 4) {
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
-//
+
             }
         });
 
