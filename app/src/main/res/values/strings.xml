@@ -19,9 +19,9 @@
 
     <string-array name="materiasProgramacion">
         <item>Interaccion\nHombre Maquina</item>
-        <item>Administracion de\nPaginas Web</item>
+        <item>Administracion\nde Paginas Web</item>
         <item>Desarrollo de\nAplicaciones\nMobiles</item>
-        <item>Sistemas de\nInformacion Geografica</item>
+        <item>Sistemas de\nInformacion\nGeografica</item>
         <item>Programacion de\nVideojuegos</item>
         <item>Derecho\nInformatico</item>
     </string-array>

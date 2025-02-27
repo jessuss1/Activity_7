@@ -51,27 +51,26 @@ public class ScheduleActivity extends AppCompatActivity {
         // Si el index es 0 (valor default) no se paso o recibido el index
         if (selectedIndex == 1 || selectedIndex == 2){
 
+            //Los arrays estan en res/values/strings.xml
             materiasProgramacion = getResources().getStringArray(R.array.materiasProgramacion);
             maestrosProgramacion = getResources().getStringArray(R.array.maestrosProgramacion);
 
             for (int i = 0; i < maestrosProgramacion.length; i++){
+                    //Obtenemos el id en integers del los TextView objetivo y los asignamos a maestroTextView
                     int maestroTextView = getResources().getIdentifier("maestro"+i, "id", getPackageName());
+                    //Buscamos los TextView con el id que se guarda en maestroTextView
                     TextView maestroTV = binding.getRoot().findViewById(maestroTextView);
 
-                    if (maestroTV != null){
-                        maestroTV.setText(maestrosProgramacion[i]);
-                    }
-
-
-
-                for (i = 0; i <= materiasProgramacion.length; i++){
                     int materiaTextView = getResources().getIdentifier("materia"+i, "id", getPackageName());
                     TextView materiaTV =  binding.getRoot().findViewById(materiaTextView);
 
-                    if (materiaTV != null){
+                    //Para prevenir que la aplicacion se cierre en caso de que algun id sea null
+                if (maestroTV != null && materiaTV != null){
+
+                        maestroTV.setText(maestrosProgramacion[i]);
                         materiaTV.setText(materiasProgramacion[i]);
                     }
-                }
+
             }
 
             } else if (selectedIndex == 3 || selectedIndex == 4 ){
@@ -80,21 +79,18 @@ public class ScheduleActivity extends AppCompatActivity {
             materiasRedes = getResources().getStringArray(R.array.materiasRedes);
 
             for (int i = 0; i < maestrosRedes.length; i++){
+
                 int maestroTextView = getResources().getIdentifier("maestro"+i, "id", getPackageName());
                 TextView maestroTV = binding.getRoot().findViewById(maestroTextView);
 
-                if (maestroTV != null){
+                int materiaTextView = getResources().getIdentifier("materia"+i, "id", getPackageName());
+                TextView materiaTV = binding.getRoot().findViewById(materiaTextView);
+
+                if (maestroTV != null && materiaTV != null){
                     maestroTV.setText(maestrosRedes[i]);
+                    materiaTV.setText(materiasRedes[i]);
                 }
 
-                for (i = 0; i < materiasRedes.length; i++){
-                    int materiaTextView = getResources().getIdentifier("materia"+i, "id", getPackageName());
-                    TextView materiaTV = binding.getRoot().findViewById(materiaTextView);
-
-                    if (materiaTV != null){
-                        materiaTV.setText(materiasRedes[i]);
-                    }
-                }
             }
 
         } else {
